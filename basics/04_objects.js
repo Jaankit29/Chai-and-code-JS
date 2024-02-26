@@ -43,7 +43,19 @@ const obj3={...obj1,  ...obj2}
  ]
  //console.log(users)
 
- console.log(Object.keys(tinderUser))
- console.log(Object.values(tinderUser))
- console.log(typeof Object.entries(tinderUser))
- console.log(tinderUser.hasOwnProperty('name'))
+//  console.log(Object.keys(tinderUser))
+//  console.log(Object.values(tinderUser))
+//  console.log(typeof Object.entries(tinderUser))
+//  console.log(tinderUser.hasOwnProperty('name '))
+
+// de-structure Objects
+const course={
+    coursename: "js hindi",
+    price: "100",
+    courseInstructor: "Ankit"
+}
+
+const {courseInstructor: ins} = course
+
+//console.log(courseInstructor)
+console.log(ins )

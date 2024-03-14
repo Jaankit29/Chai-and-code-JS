@@ -54,9 +54,7 @@ button.addEventListener('click', function(e){
   <body>
     <nav>
       <a href="/" aria-current="page">Home</a>
-      <a target="_blank" href="https://www.youtube.com/@chaiaurcode"
-        >Youtube channel</a
-      >
+      
     </nav>
     <div class="canvas">
       <!-- <a

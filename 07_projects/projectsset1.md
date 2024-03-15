@@ -127,7 +127,7 @@ span {
   background: purple;
 }
 ```
-## Project 2 -BMI Generater
+## Project 2 -BMI Generator
 
 ```javascript
 // chaiaurcode.js
@@ -257,4 +257,20 @@ h1 {
   padding-top: 25px;
   
 }
+```
+
+## Project 3 - Digital clock
+
+```javascript
+const clock= document.getElementById('clock')
+
+// let date= new Date()
+// console.log(date.toLocaleTimeString())      
+// clock.innerHTML=date.toLocaleTimeString()  
+
+setInterval(function(){
+  let date= new Date()
+//console.log(date.toLocaleTimeString())      
+clock.innerHTML=date.toLocaleTimeString() 
+}, 1000)
 ```

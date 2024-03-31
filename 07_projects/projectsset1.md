@@ -371,9 +371,45 @@ function newGame() {
     playGame = true;
   });
 }
+```
+## Project 6 - Changing BG color
+```javascript
+
+const randomColor = function () {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+    // console.log(Math.floor(Math.random() * 16));
+    // console.log(color);
+  }
+  return color;
+};
+
+function changeBgColor() {
+  document.body.style.backgroundColor = randomColor();
+  // console.log(randomColor());
+}
+
+let intervalId;
+const startChangingColor = function () {
+  if (!intervalId) { //or intervalId==null
+    intervalId = setInterval(changeBgColor, 1000); 
+    console.log(randomColor());
+  }
+// //******** wrong approach *************
+// //  if (!intervalId) { //or intervalId==null
+//    intervalId = setInterval(changeBgColor, 1000);
+//    console.log(randomColor());
+// //  }
+};
+const stopChangeColor= function(){
+  clearInterval(intervalId);
+  intervalId=null;
+}
 
 
-
-
-
+//console.log(randomColor())
+document.querySelector('#start').addEventListener('click', startChangingColor);
+document.querySelector('#stop').addEventListener('click', stopChangeColor);
 ```

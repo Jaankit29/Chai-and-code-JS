@@ -4,19 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        
+    </style>
 </head>
-<body style="background-color: #c7c2c2;">
+<!-- <body style="background-color: #c7c2c2;">
 0	UNSENT	Client has been created. open() not called yet.
 1	OPENED	open() has been called.
 2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
 3	LOADING	Downloading; responseText holds partial data.
 4	DONE	The operation is complete.
-</body>
+<div class="card" style="width: 18rem; border: 2px solid black;">
+    <img src="..." class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>
 
 <script>
-    const requestUrl= 'https://api.github.com/users/jaankit29'
-    const xhr= new XMLHttpRequest();
-    xhr.open('GET', requestUrl)
-    xhr.send();   
-</script>
+    const requestUrl = 'https://api.github.com/users/jaankit29';
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', requestUrl);
+    xhr.onreadystatechange = function() {
+        console.log(xhr.readyState);
+        // if (xhr.readyState == 4) {
+        //     const data = JSON.parse(this.responseText);
+        //     console.log(typeof data);
+        //     console.log(data.name);
+        //     console.log(data);
+
+        //     // Select the card-img-top element
+        //     var cardImg = document.querySelector('.card-img-top');
+
+        //     // Create a new image element
+        //     var newImg = document.createElement('img');
+
+        //     // Set the source and alt attributes for the new image
+        //     newImg.src = data.avatar_url; // Use the URL from the API response
+        //     newImg.alt = 'Avatar Image';
+
+        //     // Replace the existing image with the new one
+        //     cardImg.parentNode.replaceChild(newImg, cardImg);
+
+        //     newImg.style.maxWidth = '100%'; // Ensure the image doesn't exceed the width of the card
+        //     newImg.style.maxHeight = '100%'
+        // }
+
+        const data = JSON.parse(this.responseText);
+
+            // Select the card-img-top element
+            var cardImg = document.querySelector('.card-img-top');
+
+            // Create a new image element
+            var newImg = document.createElement('img');
+
+         // Set the source and alt attributes for the new image
+            newImg.src = data.avatar_url; // Use the URL from the API response
+            newImg.alt = 'Avatar Image';
+
+            // Replace the existing image with the new one
+            cardImg.parentNode.replaceChild(newImg, cardImg);
+          
+
+            newImg.style.maxWidth = '100%'; // Ensure the image doesn't exceed the width of the card
+            newImg.style.maxHeight = '100%'
+
+             // Select the card-title element
+             var cardTitle = document.querySelector('.card-title');
+
+// Update the card title with the name fetched from the API
+cardTitle.textContent = data.name;
+
+          var cardText= document.querySelector('.card-text');
+          cardText.textContent= data;
+
+    };
+
+    xhr.send();
+</script> -->
+
+
+
+
+<body style="background-color: #c7c2c2;">
+    0	UNSENT	Client has been created. open() not called yet.
+    1	OPENED	open() has been called.
+    2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+    3	LOADING	Downloading; responseText holds partial data.
+    4	DONE	The operation is complete.
+
+    <div class="card" style="width: 18rem; border: 2px solid black;">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+    </div>
+</body>
+    <script>
+        const requestUrl = 'https://api.github.com/users/jaankit29';
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', requestUrl);
+        xhr.onreadystatechange = function() {
+           // console.log(xhr.readyState);
+    
+            const data = JSON.parse(this.responseText);
+    
+                // Select the card-img-top element
+                var cardImg = document.querySelector('.card-img-top');
+    
+                // Create a new image element
+                var newImg = document.createElement('img');
+    
+             // Set the source and alt attributes for the new image
+                newImg.src = data.avatar_url; 
+                newImg.alt = 'Avatar Image';
+    
+                // Replace the existing image with the new one
+                cardImg.parentNode.replaceChild(newImg, cardImg);
+    
+                newImg.style.maxWidth = '100%'; 
+                newImg.style.maxHeight = '100%'
+    
+                 // Select the card-title element
+                 var cardTitle = document.querySelector('.card-title');
+    
+    // Update the card title with the name fetched from the API
+    cardTitle.textContent = data.name;
+    
+        };
+        xhr.send();
+    </script>
+
 </html>
